@@ -1,8 +1,12 @@
-$('.js-tilt-scale').tilt({
-	scale: 1.1
-})
+if(window.innerWidth > 720){
+	$('.js-tilt-scale').tilt({
+		scale: 1.1
+	});
+}
 
-$('.js-tilt').tilt()
+if(window.innerWidth > 720){
+	$('.js-tilt').tilt();
+}
 
 $(document).ready(function() {
   // Sélectionnez la div sur laquelle vous souhaitez cliquer
@@ -117,70 +121,70 @@ const projects = [
 {
 	title: "Nomade",
 	tags: ["UX Design", "UI Design"],
-	date: "2023-06-15",
+	date: "2022-10-01",
 	description: "Lors du hackathon 2022 de #SupDeWeb, le thème du voyage original était annoncé. C’est alors que Nomade intervient.",
 	link: "nomade.html"
 },
 {
 	title: "CloseMe",
 	tags: ["UX Design", "UI Design"],
-	date: "2023-06-14",
+	date: "2022-09-01",
 	description: "CloseMe est un concept d’application de rencontre qui se base sur la proximité et casse les codes dans son industrie.",
 	link: "#"
 },
 {
 	title: "The Wokies",
 	tags: ["Refonte"],
-	date: "2023-06-15",
+	date: "2022-06-15",
 	description: "The Wokies est un site B2B qui propose des solutions de teambuilding à la sensibilisation RSE.",
 	link: "#"
 },
 {
 	title: "Luna",
 	tags: ["UX Design", "UI Design", "Développement Web"],
-	date: "2023-06-16",
+	date: "2023-01-01",
 	description: "Luna est une application pour accompagner l’utilisateur sur sa consommation d’eau quotidienne",
 	link: "#"
 },
 {
 	title: "Tati",
 	tags: ["Refonte"],
-	date: "2023-06-15",
+	date: "2022-03-01",
 	description: "Tati, une icône du bazar bon marché était le sujet notre rebranding pour relancer et moderniser l’image de marque",
 	link: "#"
 },
 {
 	title: "Pawsome",
 	tags: ["UX Design", "UI Design"],
-	date: "2023-06-15",
+	date: "2023-03-01",
 	description: "Pawsome est une application de réseau social spécialisé sur les animaux. Son processus de création était le design sprint",
 	link: "#"
 },
 {
 	title: "France Coquine",
 	tags: ["Refonte", "UX Design", "UI Design", "Développement Web"],
-	date: "2023-06-15",
+	date: "2022-11-01",
 	description: "France Coquine est un site d’article sur le thème du libertinage appartenant à Petit Futé",
 	link: "#"
 },
 {
 	title: "Étais La Sauvin",
 	tags: ["Développement Web"],
-	date: "2023-06-15",
+	date: "2021-06-06",
 	description: "La mairie d’Étais la Sauvin {finir}",
 	link: "#"
 },
 {
 	title: "PicWicToys",
 	tags: ["Refonte", "UX Design"],
-	date: "2023-06-15",
+	date: "2022-06-15",
 	description: "Description",
 	link: "#"
 },
 {
 	title: "BlockchainyourIP",
 	tags: ["Refonte", "UX Design", "UI Design"],
-	date: "2023-06-15",
+	date: "2023-04-03",
 	description: "BlockchainyourIP est un entreprise B2B qui propose d’utiliser la technologie de blockchain pour protéger ses données",
 	link: "#"
 },
@@ -211,7 +215,12 @@ function displayProjects(projects) {
 	let delay = 0;
 
 	projects.forEach(project => {
-		let projectElement = $("<div>").addClass("card js-tilt-scale");
+		let projectElement = $("<div>").addClass("card");
+		
+		if(window.innerWidth > 720){
+			projectElement.addClass("js-tilt-scale");
+		}
+
 		projectElement.attr('data-aos', 'zoom-in-up');
 		projectElement.attr('data-aos-delay', delay);
 		delay += 50;
@@ -236,9 +245,11 @@ function displayProjects(projects) {
 
 		AOS.refresh();
 
-		$('.js-tilt-scale').tilt({
-			scale: 1.1
-		})
+		if(window.innerWidth > 720){
+			$('.js-tilt-scale').tilt({
+				scale: 1.1
+			});
+		}
 	});
 }
 
@@ -289,7 +300,7 @@ $(document).ready(function() {
 	let headerMobile = $('.mobile-header');
 
 	window.addEventListener('scroll', function() {
-		let maxWidth = 440;
+		let maxWidth = 728;
 		let header = $('header');
 		
 		let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;

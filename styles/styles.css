@@ -558,7 +558,8 @@ footer #copyright span {
     flex: unset;
   }
   .presentation .img img {
-    max-width: 75vw;
+    max-width: 100%;
+    width: 100%;
   }
   .main-content {
     margin: 0 32px;
@@ -594,7 +595,7 @@ footer #copyright span {
   }
   .mobile-header {
     top: 100px;
-    position: sticky;
+    position: fixed;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -603,6 +604,7 @@ footer #copyright span {
     border-bottom: 1px solid #000;
     align-items: center;
     z-index: 64;
+    width: 100%;
   }
   .mobile-header a {
     text-decoration: none;
