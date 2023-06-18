@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Antoine DION | UX/UI Designer</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../styles/styles.css" />
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<a href="../index.html">
+				<img src="../assets/logo.png"/>
+				<span class="hide">Antoine DION</span>
+			</a>
+		</div>
+
+		<div class="links">
+			<a href="#" class="">À propos</a>
+			<a href="#" class="">Projets</a>
+			<a href="#" class="btn-primary">Me contacter</a>
+		</div>
+
+		<div id="burgerMenu">
+			<img src="../assets/Burger.png">
+		</div>
+	</header>
+
+	<div class="mobile-header">
+		<a href="#" class="">À propos</a>
+		<a href="#" class="">Projets</a>
+		<a href="#" class="">Me contacter</a>
+	</div>
+
+	<div class="main">
+		<h1>Projets</h1>
+
+		<div class="btn-filter">
+			<button class="filter-button btn-primary" data-tag="Tous les projets">Tous les projets</button>
+			<button class="filter-button btn-secondary" data-tag="UX Design">UX Design</button>
+			<button class="filter-button btn-secondary" data-tag="UI Design">UI Design</button>
+			<button class="filter-button btn-secondary" data-tag="Refonte">Refonte</button>
+			<button class="filter-button btn-secondary" data-tag="Développement Web">Développement Web</button>
+		</div>
+
+
+		<div class="wrapper-projects" id="project-container">
+			
+		</div>
+	</div>
+
+	<footer>
+		<div class="links">
+			<ul>
+				<li>Pages</li>
+				<li><a href="">À propos</a></li>
+				<li><a href="">Projets</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+
+			<ul>
+				<li>Divers</a></li>
+				<li><a href="">Mentions légales</a></li>
+			</ul>
+		</div>
+
+		<div id="copyright"><span>Antoine DION</span></div> 
+	</footer>
+
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+
+	<script src="../scripts/tilt.jquery.min.js"></script>
+	<script src="../scripts/script.js"></script>
+</body>
+</html>
