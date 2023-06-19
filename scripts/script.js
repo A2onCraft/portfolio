@@ -36,7 +36,7 @@ $(document).ready(function() {
 
     if (timeSinceLastSpawn < cooldown) {
       return; // Ignore le spawn si le cooldown n'est pas écoulé
-  }
+    }
 
     lastSpawnTime = currentTime; // Met à jour le dernier temps de spawn
 
@@ -78,41 +78,41 @@ $(document).ready(function() {
           top: `+=${vy}px`, // Animation de déplacement vertical vers le curseur
           left: `+=${vx}px`, // Animation de déplacement horizontal vers le curseur
           opacity: 0 // Animation de disparition
-      },
+        },
         1000, // Durée de l'animation (en millisecondes)
         function() {
           // Supprimez le confetti une fois l'animation terminée
         	confetti.remove();
         }
         );
+    }
   }
-}
 
   // Ajoutez des événements de souris à la div cible
-divCible.on('mousedown', function(e) {
-	isMouseDown = true;
-	spawnInterval = setInterval(function() {
-		if (isMouseDown) {
-			generateConfetti(e);
-		}
+  divCible.on('mousedown', function(e) {
+  	isMouseDown = true;
+  	spawnInterval = setInterval(function() {
+  		if (isMouseDown) {
+  			generateConfetti(e);
+  		}
     }, 100); // Intervalle de spawn
-});
+  });
 
-divCible.on('mouseup', function() {
-	isMouseDown = false;
-	clearInterval(spawnInterval);
-});
+  divCible.on('mouseup', function() {
+  	isMouseDown = false;
+  	clearInterval(spawnInterval);
+  });
 
-divCible.on('mouseleave', function() {
-	isMouseDown = false;
-	clearInterval(spawnInterval);
-});
+  divCible.on('mouseleave', function() {
+  	isMouseDown = false;
+  	clearInterval(spawnInterval);
+  });
 
-divCible.on('mousemove', function(e) {
-	if (isMouseDown) {
-		generateConfetti(e);
-	}
-});
+  divCible.on('mousemove', function(e) {
+  	if (isMouseDown) {
+  		generateConfetti(e);
+  	}
+  });
 });
 
 
@@ -130,70 +130,77 @@ const projects = [
 	tags: ["UX Design", "UI Design"],
 	date: "2022-09-01",
 	description: "CloseMe est un concept d’application de rencontre qui se base sur la proximité et casse les codes dans son industrie.",
-	link: "#"
+	link: "closeme.html"
 },
 {
 	title: "The Wokies",
 	tags: ["Refonte"],
 	date: "2022-06-15",
 	description: "The Wokies est un site B2B qui propose des solutions de teambuilding à la sensibilisation RSE.",
-	link: "#"
+	link: "the-wokies.html"
 },
 {
 	title: "Luna",
 	tags: ["UX Design", "UI Design", "Développement Web"],
-	date: "2023-01-01",
+	date: "2022-01-01",
 	description: "Luna est une application pour accompagner l’utilisateur sur sa consommation d’eau quotidienne",
-	link: "#"
+	link: "luna.html"
 },
 {
 	title: "Tati",
 	tags: ["Refonte"],
 	date: "2022-03-01",
 	description: "Tati, une icône du bazar bon marché était le sujet notre rebranding pour relancer et moderniser l’image de marque",
-	link: "#"
+	link: "tati.html"
 },
 {
 	title: "Pawsome",
 	tags: ["UX Design", "UI Design"],
 	date: "2023-03-01",
 	description: "Pawsome est une application de réseau social spécialisé sur les animaux. Son processus de création était le design sprint",
-	link: "#"
+	link: "pawsome.html"
 },
 {
 	title: "France Coquine",
 	tags: ["Refonte", "UX Design", "UI Design", "Développement Web"],
 	date: "2022-11-01",
 	description: "France Coquine est un site d’article sur le thème du libertinage appartenant à Petit Futé",
-	link: "#"
+	link: "france-coquine.html"
 },
 {
 	title: "Étais La Sauvin",
 	tags: ["Développement Web"],
 	date: "2021-06-06",
 	description: "La mairie d’Étais la Sauvin {finir}",
-	link: "#"
+	link: "etais-la-sauvin.html"
 },
 {
 	title: "PicWicToys",
 	tags: ["Refonte", "UX Design"],
 	date: "2022-06-15",
 	description: "Description",
-	link: "#"
+	link: "picwictoys.html"
 },
 {
 	title: "BlockchainyourIP",
 	tags: ["Refonte", "UX Design", "UI Design"],
 	date: "2023-04-03",
 	description: "BlockchainyourIP est un entreprise B2B qui propose d’utiliser la technologie de blockchain pour protéger ses données",
-	link: "#"
+	link: "blockchainyoutip.html"
 },
 {
 	title: "Netflix",
 	tags: ["Refonte", "UX Design"],
 	date: "2023-02-10",
 	description: "Une refonte Netflix en proposant un côté plus communautaire",
-	link: "#"
+	link: "netflix.html"
+},
+{
+	title: "Petit Futé",
+	tags: ["Refonte", "UX Design", "UI Design", "Développement Web"],
+	date: "2099-01-10",
+	description: "Petit Futé",
+	link: "petitfute.html"
 }
 ];
 
