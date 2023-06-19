@@ -36,7 +36,7 @@ $(document).ready(function() {
 
     if (timeSinceLastSpawn < cooldown) {
       return; // Ignore le spawn si le cooldown n'est pas écoulé
-    }
+  }
 
     lastSpawnTime = currentTime; // Met à jour le dernier temps de spawn
 
@@ -78,41 +78,41 @@ $(document).ready(function() {
           top: `+=${vy}px`, // Animation de déplacement vertical vers le curseur
           left: `+=${vx}px`, // Animation de déplacement horizontal vers le curseur
           opacity: 0 // Animation de disparition
-        },
+      },
         1000, // Durée de l'animation (en millisecondes)
         function() {
           // Supprimez le confetti une fois l'animation terminée
         	confetti.remove();
         }
         );
-    }
   }
+}
 
   // Ajoutez des événements de souris à la div cible
-  divCible.on('mousedown', function(e) {
-  	isMouseDown = true;
-  	spawnInterval = setInterval(function() {
-  		if (isMouseDown) {
-  			generateConfetti(e);
-  		}
+divCible.on('mousedown', function(e) {
+	isMouseDown = true;
+	spawnInterval = setInterval(function() {
+		if (isMouseDown) {
+			generateConfetti(e);
+		}
     }, 100); // Intervalle de spawn
-  });
+});
 
-  divCible.on('mouseup', function() {
-  	isMouseDown = false;
-  	clearInterval(spawnInterval);
-  });
+divCible.on('mouseup', function() {
+	isMouseDown = false;
+	clearInterval(spawnInterval);
+});
 
-  divCible.on('mouseleave', function() {
-  	isMouseDown = false;
-  	clearInterval(spawnInterval);
-  });
+divCible.on('mouseleave', function() {
+	isMouseDown = false;
+	clearInterval(spawnInterval);
+});
 
-  divCible.on('mousemove', function(e) {
-  	if (isMouseDown) {
-  		generateConfetti(e);
-  	}
-  });
+divCible.on('mousemove', function(e) {
+	if (isMouseDown) {
+		generateConfetti(e);
+	}
+});
 });
 
 
@@ -199,7 +199,7 @@ const projects = [
 	title: "Petit Futé",
 	tags: ["Refonte", "UX Design", "UI Design", "Développement Web"],
 	date: "2099-01-10",
-	description: "Petit Futé",
+	description: "Étant webmaster à Petit Futé, j'ai eu l'occasion de travailler sur une multitude de projets concernant l'UX, l'UI et le développement web",
 	link: "petitfute.html"
 }
 ];
@@ -293,12 +293,6 @@ function URL(url) {
 
 $(document).ready(function() {
 	const currentURL = window.location.href;
-	
-	if (URL(currentURL) == 'pages') {
-		let selectedTag = "Tous les projets"
-		let filteredProjects = filterProjectsByTagAndDate(projects, selectedTag);
-		displayProjects(filteredProjects);
-	}
 
 	let currentYear = new Date().getFullYear();
 	$("#copyright span").text("Antoine DION");
@@ -353,4 +347,47 @@ $(document).ready(function() {
 			headerMobile.slideUp(300);
 		}
 	});
+
+	
+
+	if (URL(currentURL) == 'pages') {
+		let paramsSection = currentURL.split("?")[1];
+		let selectedTag = "Tous les projets"
+		
+		if (paramsSection) {
+			let paramsPairs = paramsSection.split("&");
+
+			paramsPairs.forEach(function(pair) {
+				let keyValue = pair.split("=");
+				let key = keyValue[0];
+				let value = keyValue[1];
+
+				if(key == 'filter'){
+					switch(value){
+					case "UX_Design":
+						selectedTag = 'UX Design';
+						break;
+
+					case "UI_Design":
+						selectedTag = 'UI Design';
+						break;
+
+					case "Refonte":
+						selectedTag = 'Refonte';
+						break;
+
+					case "Developpement_web":
+						selectedTag = 'Développement Web';
+						break;
+
+					default:
+						break;
+					}
+				}
+			});
+		}
+
+		let filteredProjects = filterProjectsByTagAndDate(projects, selectedTag);
+		displayProjects(filteredProjects);
+	}
 });
