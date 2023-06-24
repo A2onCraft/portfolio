@@ -289,6 +289,12 @@ function URL(url) {
 			return 'index';
 		}
 	}
+
+	if(regexPatternPage = /pages\//){
+		if (regexPatternPage.test(url)){
+			return 'pages/';
+		}
+	}
 }
 
 $(document).ready(function() {
@@ -389,5 +395,27 @@ $(document).ready(function() {
 
 		let filteredProjects = filterProjectsByTagAndDate(projects, selectedTag);
 		displayProjects(filteredProjects);
+	}
+
+	if (URL(currentURL) == 'pages/') {
+		$(".owl-carousel").owlCarousel({
+			loop: true,
+			center: true,
+			margin: 16,
+			lazyLoad: true,
+			nav: true,
+			dots: true,
+			responsive: {
+				0: {
+					items:2
+				},
+				600: {
+					items:3
+				},
+				1000: {
+					items:5
+				}
+			}
+		});
 	}
 });

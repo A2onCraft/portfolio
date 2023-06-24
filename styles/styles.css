@@ -148,6 +148,11 @@ button.btn-secondary:active {
   color: #fff;
   border: 2px solid #fff;
 }
+.js-tilt-scale:hover,
+.js-tilt:hover {
+  transition-delay: 0s !important;
+  transition-duration: 0s !important;
+}
 header {
   height: 100px;
   display: flex;
@@ -175,6 +180,10 @@ header .links {
   align-items: center;
   flex-wrap: nowrap;
   gap: 48px;
+  transition: all 0.3s ease;
+}
+header .links a:hover {
+  text-decoration: underline;
 }
 header img {
   transition: all 0.3s ease;
@@ -337,8 +346,13 @@ body {
   font-weight: 700;
   font-size: 24px;
 }
-.wrapper .card .text .title .pastille,
-.wrapper-projects .card .text .title .pastille {
+.wrapper .card .text p,
+.wrapper-projects .card .text p {
+  font-weight: 400;
+  font-size: 16px;
+  color: #333;
+}
+.pastille {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -346,30 +360,21 @@ body {
   gap: 10px;
   border-radius: 76px;
   height: fit-content;
+  width: fit-content;
   font-weight: 400;
   font-size: 12px;
 }
-.wrapper .card .text .title .pastille.refonte,
-.wrapper-projects .card .text .title .pastille.refonte {
+.pastille.refonte {
   background: #EBFCE6;
 }
-.wrapper .card .text .title .pastille.ux-design,
-.wrapper-projects .card .text .title .pastille.ux-design {
+.pastille.ux-design {
   background: #E6FCFC;
 }
-.wrapper .card .text .title .pastille.ui-design,
-.wrapper-projects .card .text .title .pastille.ui-design {
+.pastille.ui-design {
   background: #F1E6FC;
 }
-.wrapper .card .text .title .pastille.développement-web,
-.wrapper-projects .card .text .title .pastille.développement-web {
+.pastille.développement-web {
   background: #FCF1E6;
-}
-.wrapper .card .text p,
-.wrapper-projects .card .text p {
-  font-weight: 400;
-  font-size: 16px;
-  color: #333;
 }
 .wrapper-projects {
   display: grid;
@@ -497,7 +502,15 @@ body {
 .main h1 {
   font-weight: 700;
   font-size: 32px;
-  margin-bottom: 32px;
+}
+.main .title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.main h2 {
+  font-size: 24px;
 }
 .main .btn-filter {
   display: flex;
@@ -510,6 +523,18 @@ body {
 }
 .main .btn-filter button {
   font-size: 16px;
+}
+.main .m-t-2 {
+  margin-top: 32px;
+}
+.main .m-t-1 {
+  margin-top: 16px;
+}
+.main .header-img {
+  width: 100%;
+}
+.main .header-img img {
+  width: 100%;
 }
 footer {
   height: auto;
@@ -549,6 +574,18 @@ footer .links ul li:first-child {
 }
 footer #copyright span {
   font-weight: bold;
+}
+.retour a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.retour a:hover span {
+  text-decoration: underline;
+}
+.retour a span {
+  color: #222;
 }
 @media screen and (max-width: 1150px) {
   .main {

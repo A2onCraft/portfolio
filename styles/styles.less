@@ -79,6 +79,13 @@ h2{
 	}
 }
 
+.js-tilt-scale, .js-tilt{
+	&:hover{
+		transition-delay: 0s !important;
+		transition-duration: 0s !important;
+	}
+}
+
 header {
 	height: 100px;
 	display: flex;
@@ -106,6 +113,11 @@ header {
 		align-items: center;
 		flex-wrap: nowrap;
 		gap: 48px;
+		transition: all 0.3s ease;
+
+		a:hover{
+			text-decoration: underline;
+		}
 	}
 
 	img{
@@ -280,35 +292,6 @@ body{
 					font-weight: 700;
 					font-size: 24px;
 				}
-
-				.pastille{
-					display: flex;
-					flex-direction: row;
-					align-items: flex-start;
-					padding: 4px 12px;
-					gap: 10px;
-					border-radius: 76px;
-					height: fit-content;
-
-					font-weight: 400;
-					font-size: 12px;
-
-					&.refonte{
-						background: #EBFCE6;
-					}
-
-					&.ux-design{
-						background: #E6FCFC;
-					}
-
-					&.ui-design{
-						background: #F1E6FC;
-					}
-
-					&.développement-web{
-						background: #FCF1E6;
-					}
-				}
 			}
 
 			p{
@@ -317,6 +300,36 @@ body{
 				color: #333;
 			}
 		}
+	}
+}
+
+.pastille{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 4px 12px;
+	gap: 10px;
+	border-radius: 76px;
+	height: fit-content;
+	width: fit-content;
+
+	font-weight: 400;
+	font-size: 12px;
+
+	&.refonte{
+		background: #EBFCE6;
+	}
+
+	&.ux-design{
+		background: #E6FCFC;
+	}
+
+	&.ui-design{
+		background: #F1E6FC;
+	}
+
+	&.développement-web{
+		background: #FCF1E6;
 	}
 }
 
@@ -469,7 +482,17 @@ body{
 	h1{
 		font-weight: 700;
 		font-size: 32px;
-		margin-bottom: 32px;
+	}
+
+	.title{
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		flex-wrap: wrap;
+	}
+
+	h2{
+		font-size: 24px;
 	}
 
 	.btn-filter{
@@ -483,6 +506,22 @@ body{
 
 		button{
 			font-size: 16px;
+		}
+	}
+
+	.m-t-2{
+		margin-top: 32px;
+	}
+
+	.m-t-1{
+		margin-top: 16px;
+	}
+
+	.header-img{
+		width: 100%;
+
+		img{
+			width: 100%;
 		}
 	}
 }
@@ -534,6 +573,68 @@ footer{
 		font-weight: bold;
 	}
 }
+
+.retour a{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	text-decoration: none;
+
+	&:hover{
+		span {
+			text-decoration: underline;
+		}
+	}
+
+	span{
+		color: #222;
+	}
+}
+
+.owl-carousel{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1150px) {
 	.header{
