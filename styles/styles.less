@@ -49,6 +49,8 @@ h2{
 	font-weight: bold;
 	transition: all 0.3s ease;
 	cursor: pointer;
+	justify-content: center;
+	min-width: 92px;
 
 	&:hover, &:active{
 		background: #FFF;
@@ -71,6 +73,8 @@ h2{
 	font-weight: bold;
 	transition: all 0.3s ease;
 	cursor: pointer;
+	justify-content: center;
+	min-width: 92px;
 
 	&:hover, &:active{
 		background: #000;
@@ -138,6 +142,36 @@ body{
 	background-image: url(../assets/bg-arrow-2.svg);
 	background-repeat: no-repeat;
 	background-position: center top 65px;
+
+	.footer-contact{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 32px;
+		padding-bottom: 128px;
+		width: 720px;
+		margin: 0 auto;
+
+		h2{
+			font-size: 32px;
+		}
+
+		.text{
+			display: flex;
+			gap: 64px;
+
+			p{
+				font-size: 16px;
+				font-weight: 300;
+			}
+
+			.links{
+				display: flex;
+				gap: 16px;
+			}
+
+		}
+	}
 }
 
 .projets{
@@ -330,6 +364,10 @@ body{
 
 	&.développement-web{
 		background: #FCF1E6;
+	}
+
+	&.jeu-vidéo{
+		background: #FCE6E6;
 	}
 }
 
@@ -688,9 +726,29 @@ footer{
 				justify-content: center;
 			}
 		}
+
+		.footer-contact{
+			width: 100%;
+			padding-bottom: 64px;
+
+			h2{
+				font-size: 48px;
+			}
+
+			.text{
+				gap: 32px;
+				flex-direction: column;
+				
+				.links{
+					justify-content: center;
+				}
+			}
+		}
 	}
 
 	.a-propos{
+		padding-bottom: 64px;
+
 		.wrapper{
 			width: 100%;
 			margin: 0;

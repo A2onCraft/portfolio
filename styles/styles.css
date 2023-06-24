@@ -115,6 +115,8 @@ button.btn-primary {
   font-weight: bold;
   transition: all 0.3s ease;
   cursor: pointer;
+  justify-content: center;
+  min-width: 92px;
 }
 .btn-primary:hover,
 button.btn-primary:hover,
@@ -139,6 +141,8 @@ button.btn-secondary {
   font-weight: bold;
   transition: all 0.3s ease;
   cursor: pointer;
+  justify-content: center;
+  min-width: 92px;
 }
 .btn-secondary:hover,
 button.btn-secondary:hover,
@@ -199,6 +203,30 @@ body {
   background-image: url(../assets/bg-arrow-2.svg);
   background-repeat: no-repeat;
   background-position: center top 65px;
+}
+.main-content .footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  padding-bottom: 128px;
+  width: 720px;
+  margin: 0 auto;
+}
+.main-content .footer-contact h2 {
+  font-size: 32px;
+}
+.main-content .footer-contact .text {
+  display: flex;
+  gap: 64px;
+}
+.main-content .footer-contact .text p {
+  font-size: 16px;
+  font-weight: 300;
+}
+.main-content .footer-contact .text .links {
+  display: flex;
+  gap: 16px;
 }
 .projets {
   display: flex;
@@ -375,6 +403,9 @@ body {
 }
 .pastille.développement-web {
   background: #FCF1E6;
+}
+.pastille.jeu-vidéo {
+  background: #FCE6E6;
 }
 .wrapper-projects {
   display: grid;
@@ -626,6 +657,23 @@ footer #copyright span {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
+  }
+  .main-content .footer-contact {
+    width: 100%;
+    padding-bottom: 64px;
+  }
+  .main-content .footer-contact h2 {
+    font-size: 48px;
+  }
+  .main-content .footer-contact .text {
+    gap: 32px;
+    flex-direction: column;
+  }
+  .main-content .footer-contact .text .links {
+    justify-content: center;
+  }
+  .a-propos {
+    padding-bottom: 64px;
   }
   .a-propos .wrapper {
     width: 100%;
