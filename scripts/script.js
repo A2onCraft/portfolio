@@ -115,7 +115,13 @@ divCible.on('mousemove', function(e) {
 });
 });
 
-
+/*{
+	title: "Tati",
+	tags: ["Refonte"],
+	date: "2022-03-01",
+	description: "Tati, une icône du bazar bon marché était le sujet notre rebranding pour relancer et moderniser l’image de marque",
+	link: "tati.html"
+},*/
 
 const projects = [
 {
@@ -145,13 +151,6 @@ const projects = [
 	date: "2022-01-01",
 	description: "Luna est une application pour accompagner l’utilisateur sur sa consommation d’eau quotidienne",
 	link: "luna.html"
-},
-{
-	title: "Tati",
-	tags: ["Refonte"],
-	date: "2022-03-01",
-	description: "Tati, une icône du bazar bon marché était le sujet notre rebranding pour relancer et moderniser l’image de marque",
-	link: "tati.html"
 },
 {
 	title: "Pawsome",

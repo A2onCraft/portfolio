@@ -533,6 +533,29 @@ body{
 		font-size: 24px;
 	}
 
+	img.responsive{
+		width: 100%;
+		height: auto;
+
+		&.mobile{
+			width: 25%;
+			display: flex;
+			margin: 30px auto;
+		}
+	}
+
+	p{
+		margin-bottom: 16px;
+	}
+
+	li{
+		margin-left: 32px;
+
+		&:last-child{
+			margin-bottom: 16px;
+		}
+	}
+
 	.btn-filter{
 		display: flex;
 		flex-direction: row;
@@ -680,7 +703,7 @@ footer{
 	}
 
 	.main{
-		margin: 128px 32px;
+		margin: 128px 16px 32px 16px;
 		max-width: 100%;
 
 		.btn-filter{
@@ -692,6 +715,17 @@ footer{
 			flex-wrap: wrap;
 			width: 100%;
 		}
+
+		img.responsive{
+
+			&.mobile{
+				width: 100%;
+			}
+		}
+	}
+
+	footer{
+		gap: 32px;
 	}
 
 	.presentation{
