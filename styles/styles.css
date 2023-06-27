@@ -157,6 +157,47 @@ button.btn-secondary:active {
   transition-delay: 0s !important;
   transition-duration: 0s !important;
 }
+.owl-carousel .owl-nav {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  margin: 0 16px;
+}
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+  font-size: 36px;
+  width: 45px;
+  background-color: #2222226e;
+  color: #FFF;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+}
+.owl-carousel .owl-nav button.owl-prev:hover,
+.owl-carousel .owl-nav button.owl-next:hover {
+  color: #222;
+}
+.owl-carousel .owl-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 16px;
+  transition: all 0.3s ease;
+}
+.owl-carousel .owl-dots button {
+  width: 8px;
+  height: 8px;
+  background-color: #CCC;
+  border-radius: 100%;
+  transition: all 0.3s ease;
+}
+.owl-carousel .owl-dots button.active {
+  background-color: #222;
+}
 header {
   height: 100px;
   display: flex;

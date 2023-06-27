@@ -90,6 +90,53 @@ h2{
 	}
 }
 
+.owl-carousel {
+	.owl-nav{
+		display: flex;
+		justify-content: space-between;
+		position: absolute;
+		width: 100%;
+		top: 40%;
+		margin: 0 16px;
+
+		button.owl-prev, button.owl-next{
+			font-size: 36px;
+			width: 45px;
+			background-color: #2222226e;
+			color: #FFF;
+			display: flex;
+			border-radius: 100%;
+			justify-content: center;
+
+			&:hover{
+				color: #222;
+			}
+		}
+	}
+
+	.owl-dots{
+		display: flex;
+		gap: 8px;
+		justify-content: center;
+		flex-wrap: wrap;
+		flex-direction: row;
+		margin-top: 16px;
+		transition: all 0.3s ease;
+
+		button{
+			width: 8px;
+			height: 8px;
+			background-color: #CCC;
+			border-radius: 100%;
+			transition: all 0.3s ease;
+
+			&.active{
+				background-color: #222;
+			}
+		}
+	}
+}
+
 header {
 	height: 100px;
 	display: flex;

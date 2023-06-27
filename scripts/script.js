@@ -402,7 +402,6 @@ $(document).ready(function() {
 			center: true,
 			margin: 16,
 			lazyLoad: true,
-			nav: true,
 			dots: true,
 			responsive: {
 				0: {
