@@ -88,14 +88,14 @@ $(document).ready(function() {
   }
 }
 
-  // Ajoutez des événements de souris à la div cible
+  /*Ajoutez des événements de souris à la div cible*/
 divCible.on('mousedown', function(e) {
 	isMouseDown = true;
 	spawnInterval = setInterval(function() {
 		if (isMouseDown) {
 			generateConfetti(e);
 		}
-    }, 100); // Intervalle de spawn
+		    }, 100); // Intervalle de spawn
 });
 
 divCible.on('mouseup', function() {
