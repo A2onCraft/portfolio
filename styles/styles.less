@@ -379,10 +379,32 @@ body{
 				font-weight: 400;
 				font-size: 16px;
 				color: #333;
+				margin-bottom: 0;
 			}
 		}
 	}
 }
+
+.card.inactif{
+	filter: opacity(0.75) grayscale(100%);
+	transform-style: preserve-3d;
+
+	.inactif-soon{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		transform: translateZ(20px);
+
+		> span {
+			padding: 4px 12px;
+			border-radius: 76px;
+			background: #FFF;
+		}
+	}
+}
+
+
 
 .pastille{
 	display: flex;
@@ -895,7 +917,7 @@ footer{
 				height: auto;
 				aspect-ratio: 16/9;
 				background-size: cover !important;
-			}	
+			}
 		} 
 	}
 

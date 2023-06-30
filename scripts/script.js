@@ -120,7 +120,8 @@ divCible.on('mousemove', function(e) {
 	tags: ["Refonte"],
 	date: "2022-03-01",
 	description: "Tati, une icône du bazar bon marché était le sujet notre rebranding pour relancer et moderniser l’image de marque",
-	link: "tati.html"
+	link: "tati.html",
+	etat: "actif"
 },*/
 
 const projects = [
@@ -128,78 +129,89 @@ const projects = [
 	title: "Nomade",
 	tags: ["UX Design", "UI Design"],
 	date: "2022-10-01",
-	description: "Lors du hackathon 2022 de #SupDeWeb, le thème du voyage original était annoncé. C’est alors que Nomade intervient.",
-	link: "nomade.html"
+	description: "Nomade est une application de voyage humanitaire proposée lors du hackathon 2022 de #SupDeWeb, sur le thème du voyage \"original\"",
+	link: "nomade.html",
+	etat: "actif"
 },
 {
 	title: "CloseMe",
 	tags: ["UX Design", "UI Design"],
 	date: "2022-09-01",
-	description: "CloseMe est un concept d’application de rencontre qui se base sur la proximité et casse les codes dans son industrie.",
-	link: "closeme.html"
+	description: "CloseMe est un concept d’application de rencontre qui se base sur la proximité",
+	link: "closeme.html",
+	etat: "inactif"
 },
 {
 	title: "The Wokies",
 	tags: ["Refonte"],
 	date: "2022-06-15",
-	description: "The Wokies est un site B2B qui propose des solutions de teambuilding à la sensibilisation RSE.",
-	link: "the-wokies.html"
+	description: "The Wokies est un site B2B qui propose des solutions de teambuilding à la sensibilisation RSE",
+	link: "the-wokies.html",
+	etat: "actif"
 },
 {
 	title: "Luna",
 	tags: ["UX Design", "UI Design", "Développement Web"],
 	date: "2022-01-01",
 	description: "Luna est une application pour accompagner l’utilisateur sur sa consommation d’eau quotidienne",
-	link: "luna.html"
+	link: "luna.html",
+	etat: "actif"
 },
 {
 	title: "Pawsome",
 	tags: ["UX Design", "UI Design"],
 	date: "2023-03-01",
 	description: "Pawsome est une application de réseau social spécialisé sur les animaux. Son processus de création était le design sprint",
-	link: "pawsome.html"
+	link: "pawsome.html",
+	etat: "actif"
 },
 {
 	title: "France Coquine",
 	tags: ["Refonte", "UX Design", "UI Design", "Développement Web"],
 	date: "2022-11-01",
 	description: "France Coquine est un site d’article sur le thème du libertinage appartenant à Petit Futé",
-	link: "france-coquine.html"
+	link: "france-coquine.html",
+	etat: "inactif"
 },
 {
 	title: "Étais La Sauvin",
 	tags: ["Développement Web"],
 	date: "2021-06-06",
-	description: "La mairie d’Étais la Sauvin {finir}",
-	link: "etais-la-sauvin.html"
+	description: "A l'occasion d'un projet de fin d'année, la mairie d’Étais la Sauvin nous a proposé de leur créer un site web pour l'occasion",
+	link: "etais-la-sauvin.html",
+	etat: "inactif"
 },
 {
 	title: "PicWicToys",
 	tags: ["Refonte", "UX Design"],
 	date: "2022-06-15",
-	description: "Description",
-	link: "picwictoys.html"
+	description: "Un projet phygital alliant gamification pour les enfants et la facilité d'accès pour les parents lors des courses",
+	link: "picwictoys.html",
+	etat: "inactif"
 },
 {
 	title: "BlockchainyourIP",
 	tags: ["Refonte", "UX Design", "UI Design"],
 	date: "2023-04-03",
-	description: "BlockchainyourIP est un entreprise B2B qui propose d’utiliser la technologie de blockchain pour protéger ses données",
-	link: "blockchainyoutip.html"
+	description: "BlockchainyourIP est une entreprise B2B qui propose d’utiliser la technologie de blockchain pour protéger ses données",
+	link: "blockchainyoutip.html",
+	etat: "actif"
 },
 {
 	title: "Netflix",
 	tags: ["Refonte", "UX Design"],
 	date: "2023-02-10",
 	description: "Une refonte Netflix en proposant un côté plus communautaire",
-	link: "netflix.html"
+	link: "netflix.html",
+	etat: "inactif"
 },
 {
 	title: "Petit Futé",
 	tags: ["Refonte", "UX Design", "UI Design", "Développement Web"],
 	date: "2099-01-10",
 	description: "Étant webmaster à Petit Futé, j'ai eu l'occasion de travailler sur une multitude de projets concernant l'UX, l'UI et le développement web",
-	link: "petitfute.html"
+	link: "petitfute.html",
+	etat: "inactif"
 }
 ];
 
@@ -222,8 +234,8 @@ function displayProjects(projects) {
 
 	projects.forEach(project => {
 		let projectElement = $("<div>").addClass("card");
-		
-		if(window.innerWidth > 720){
+
+		if (window.innerWidth > 720) {
 			projectElement.addClass("js-tilt-scale");
 		}
 
@@ -231,12 +243,22 @@ function displayProjects(projects) {
 		projectElement.attr('data-aos-delay', delay);
 		delay += 50;
 
-		if (delay%300 == 0) {
+		if (delay % 300 == 0) {
 			delay = 0;
 		}
 
-		const anchorElement = $("<a>").attr("href", project.link);
-		const imgElement = $("<div>").addClass("img-show").addClass(project.title.toLowerCase().replace(/\s/g, '-'));
+		let anchorElement;
+		let imgElement = $("<div>").addClass("img-show").addClass(project.title.toLowerCase().replace(/\s/g, '-'));
+
+		let soonSpan = $('<div class="inactif-soon"><span>Bientôt...</span></div>');
+
+		if (project.etat == "inactif") {
+			imgElement.append(soonSpan);
+			anchorElement = projectElement;
+		} else {
+			anchorElement = $("<a>").attr("href", project.link);
+		}
+
 		const textElement = $("<div>").addClass("text");
 		const titleElement = $("<div>").addClass("title");
 		const projectTitle = $("<h3>").text(project.title);
@@ -249,9 +271,15 @@ function displayProjects(projects) {
 		projectElement.append(anchorElement);
 		projectContainer.append(projectElement);
 
+		if (project.etat != "inactif") {
+			projectElement.addClass("actif");
+		} else {
+			projectElement.addClass("inactif");
+		}
+
 		AOS.refresh();
 
-		if(window.innerWidth > 720){
+		if (window.innerWidth > 720) {
 			$('.js-tilt-scale').tilt({
 				scale: 1.1
 			});
@@ -262,7 +290,7 @@ function displayProjects(projects) {
 $(".filter-button").on("click", function() {
 	const selectedTag = $(this).data("tag");
 
-	let btn = $(this); // Store the jQuery object
+	let btn = $(this);
 
 	if (btn.hasClass('btn-secondary')) {
 		$(".filter-button").addClass('btn-secondary').removeClass('btn-primary');
