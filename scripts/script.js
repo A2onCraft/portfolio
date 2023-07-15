@@ -212,6 +212,14 @@ const projects = [
 	description: "Étant webmaster à Petit Futé, j'ai eu l'occasion de travailler sur une multitude de projets concernant l'UX, l'UI et le développement web",
 	link: "petitfute.html",
 	etat: "inactif"
+},
+{
+	title: "Sliming Away",
+	tags: ["UX Design", "Jeu Vidéo"],
+	date: "2023-07-13",
+	description: "Sliming Away est un jeu foddian game où le but est d'arriver à la sortie le plus vite possible avec comme seul mouvement : le saut",
+	link: "sliming-away.html",
+	etat: "actif"
 }
 ];
 
