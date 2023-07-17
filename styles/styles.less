@@ -669,6 +669,21 @@ body{
 			width: 100%;
 		}
 	}
+
+	.flex-disposition{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 32px;
+
+		img{
+			width: 48%;
+			padding: 10px;
+			box-sizing: border-box;
+			object-fit: contain;
+		}
+	}
 }
 
 footer{
@@ -803,6 +818,14 @@ footer{
 		img.responsive{
 
 			&.mobile{
+				width: 100%;
+			}
+		}
+
+		.flex-disposition{
+			gap: 16px;
+
+			img{
 				width: 100%;
 			}
 		}

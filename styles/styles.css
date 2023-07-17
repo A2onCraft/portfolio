@@ -657,6 +657,19 @@ body {
 .main .header-img img {
   width: 100%;
 }
+.main .flex-disposition {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+}
+.main .flex-disposition img {
+  width: 48%;
+  padding: 10px;
+  box-sizing: border-box;
+  object-fit: contain;
+}
 footer {
   height: auto;
   display: flex;
@@ -722,6 +735,12 @@ footer #copyright span {
     width: 100%;
   }
   .main img.responsive.mobile {
+    width: 100%;
+  }
+  .main .flex-disposition {
+    gap: 16px;
+  }
+  .main .flex-disposition img {
     width: 100%;
   }
   footer {
