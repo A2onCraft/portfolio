@@ -139,7 +139,7 @@ const projects = [
 	date: "2022-09-01",
 	description: "CloseMe est un concept d’application de rencontre qui se base sur la proximité",
 	link: "closeme.html",
-	etat: "inactif"
+	etat: "actif"
 },
 {
 	title: "The Wokies",
