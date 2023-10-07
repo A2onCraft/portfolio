@@ -36,7 +36,7 @@ $(document).ready(function() {
 
     if (timeSinceLastSpawn < cooldown) {
       return; // Ignore le spawn si le cooldown n'est pas écoulé
-    }
+  }
 
     lastSpawnTime = currentTime; // Met à jour le dernier temps de spawn
 
@@ -78,41 +78,41 @@ $(document).ready(function() {
           top: `+=${vy}px`, // Animation de déplacement vertical vers le curseur
           left: `+=${vx}px`, // Animation de déplacement horizontal vers le curseur
           opacity: 0 // Animation de disparition
-        },
+      },
         1000, // Durée de l'animation (en millisecondes)
         function() {
           // Supprimez le confetti une fois l'animation terminée
         	confetti.remove();
         }
         );
-    }
   }
+}
 
   /*Ajoutez des événements de souris à la div cible*/
-  divCible.on('mousedown', function(e) {
-  	isMouseDown = true;
-  	spawnInterval = setInterval(function() {
-  		if (isMouseDown) {
-  			generateConfetti(e);
-  		}
+divCible.on('mousedown', function(e) {
+	isMouseDown = true;
+	spawnInterval = setInterval(function() {
+		if (isMouseDown) {
+			generateConfetti(e);
+		}
 		    }, 100); // Intervalle de spawn
-  });
+});
 
-  divCible.on('mouseup', function() {
-  	isMouseDown = false;
-  	clearInterval(spawnInterval);
-  });
+divCible.on('mouseup', function() {
+	isMouseDown = false;
+	clearInterval(spawnInterval);
+});
 
-  divCible.on('mouseleave', function() {
-  	isMouseDown = false;
-  	clearInterval(spawnInterval);
-  });
+divCible.on('mouseleave', function() {
+	isMouseDown = false;
+	clearInterval(spawnInterval);
+});
 
-  divCible.on('mousemove', function(e) {
-  	if (isMouseDown) {
-  		generateConfetti(e);
-  	}
-  });
+divCible.on('mousemove', function(e) {
+	if (isMouseDown) {
+		generateConfetti(e);
+	}
+});
 });
 
 /*{
@@ -436,6 +436,11 @@ $(document).ready(function() {
 					case "Developpement_web":
 						selectedTag = 'Développement Web';
 						break;
+
+					case "Jeu_video":
+						selectedTag = 'Jeu Vidéo';
+						break;
+
 
 					default:
 						break;
