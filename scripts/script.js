@@ -36,7 +36,7 @@ $(document).ready(function() {
 
     if (timeSinceLastSpawn < cooldown) {
       return; // Ignore le spawn si le cooldown n'est pas écoulé
-  }
+    }
 
     lastSpawnTime = currentTime; // Met à jour le dernier temps de spawn
 
@@ -78,41 +78,41 @@ $(document).ready(function() {
           top: `+=${vy}px`, // Animation de déplacement vertical vers le curseur
           left: `+=${vx}px`, // Animation de déplacement horizontal vers le curseur
           opacity: 0 // Animation de disparition
-      },
+        },
         1000, // Durée de l'animation (en millisecondes)
         function() {
           // Supprimez le confetti une fois l'animation terminée
         	confetti.remove();
         }
         );
+    }
   }
-}
 
   /*Ajoutez des événements de souris à la div cible*/
-divCible.on('mousedown', function(e) {
-	isMouseDown = true;
-	spawnInterval = setInterval(function() {
-		if (isMouseDown) {
-			generateConfetti(e);
-		}
+  divCible.on('mousedown', function(e) {
+  	isMouseDown = true;
+  	spawnInterval = setInterval(function() {
+  		if (isMouseDown) {
+  			generateConfetti(e);
+  		}
 		    }, 100); // Intervalle de spawn
-});
+  });
 
-divCible.on('mouseup', function() {
-	isMouseDown = false;
-	clearInterval(spawnInterval);
-});
+  divCible.on('mouseup', function() {
+  	isMouseDown = false;
+  	clearInterval(spawnInterval);
+  });
 
-divCible.on('mouseleave', function() {
-	isMouseDown = false;
-	clearInterval(spawnInterval);
-});
+  divCible.on('mouseleave', function() {
+  	isMouseDown = false;
+  	clearInterval(spawnInterval);
+  });
 
-divCible.on('mousemove', function(e) {
-	if (isMouseDown) {
-		generateConfetti(e);
-	}
-});
+  divCible.on('mousemove', function(e) {
+  	if (isMouseDown) {
+  		generateConfetti(e);
+  	}
+  });
 });
 
 /*{
@@ -220,6 +220,22 @@ const projects = [
 	description: "Sliming Away est un jeu foddian game où le but est d'arriver à la sortie le plus vite possible avec comme seul mouvement : le saut",
 	link: "sliming-away.html",
 	etat: "actif"
+},
+{
+	title: "RobberGame",
+	tags: ["UX Design", "Jeu Vidéo"],
+	date: "2023-10-01",
+	description: "RobberGame est un concept de jeu qui s'inspire du jeu \"The Very Organized Thief\" créé avec KiroTheBlueFox",
+	link: "robbergame.html",
+	etat: "inactif"
+},
+{
+	title: "Dis-Le",
+	tags: ["UX Design", "UI Design"],
+	date: "2023-10-06",
+	description: "Dis-Le est le projet vainqueur du Hackathon 2023 de #SupDeWeb et qui lutte contre le harcèlement scolaire",
+	link: "dis-le.html",
+	etat: "inactif"
 }
 ];
 

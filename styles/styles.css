@@ -369,6 +369,14 @@ body {
 .wrapper-projects .card .img-show.sliming-away {
   background: url('../assets/sliming-away.png');
 }
+.wrapper .card .img-show.robbergame,
+.wrapper-projects .card .img-show.robbergame {
+  background: url('../assets/robbergame.png');
+}
+.wrapper .card .img-show.dis-le,
+.wrapper-projects .card .img-show.dis-le {
+  background: url('../assets/dis-le.png');
+}
 .wrapper .card:hover .img-show.nomade,
 .wrapper-projects .card:hover .img-show.nomade {
   background-image: url('../assets/nomade-2.png');
@@ -408,6 +416,14 @@ body {
 .wrapper .card:hover .img-show.sliming-away,
 .wrapper-projects .card:hover .img-show.sliming-away {
   background: url('../assets/sliming-away-2.png');
+}
+.wrapper .card:hover .img-show.robbergame,
+.wrapper-projects .card:hover .img-show.robbergame {
+  background: url('../assets/robbergame-2.png');
+}
+.wrapper .card:hover .img-show.dis-le,
+.wrapper-projects .card:hover .img-show.dis-le {
+  background: url('../assets/dis-le-2.png');
 }
 .wrapper .card .text,
 .wrapper-projects .card .text {
