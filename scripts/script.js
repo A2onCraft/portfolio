@@ -227,7 +227,7 @@ const projects = [
 	date: "2023-10-01",
 	description: "RobberGame est un concept de jeu qui s'inspire du jeu \"The Very Organized Thief\" créé avec KiroTheBlueFox",
 	link: "robbergame.html",
-	etat: "inactif"
+	etat: "actif"
 },
 {
 	title: "Dis-Le",
@@ -235,7 +235,7 @@ const projects = [
 	date: "2023-10-06",
 	description: "Dis-Le est le projet vainqueur du Hackathon 2023 de #SupDeWeb et qui lutte contre le harcèlement scolaire",
 	link: "dis-le.html",
-	etat: "inactif"
+	etat: "actif"
 }
 ];
 
