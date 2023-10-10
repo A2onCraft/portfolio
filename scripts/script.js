@@ -171,7 +171,7 @@ const projects = [
 	date: "2022-11-01",
 	description: "France Coquine est un site d’article sur le thème du libertinage appartenant à Petit Futé",
 	link: "france-coquine.html",
-	etat: "inactif"
+	etat: "actif"
 },
 {
 	title: "Étais La Sauvin",
