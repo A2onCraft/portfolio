@@ -9,110 +9,99 @@ if(window.innerWidth > 720){
 }
 
 $(document).ready(function() {
-  // Sélectionnez la div sur laquelle vous souhaitez cliquer
 	const divCible = $('#confetti');
 
-  // Variables pour suivre l'état du clic et le temps écoulé depuis le dernier spawn
 	let isMouseDown = false;
 	let lastSpawnTime = 0;
 	let spawnInterval;
 
-  // Fonction pour générer un nombre aléatoire entre min et max inclus
 	function getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
-  // Fonction pour générer une couleur aléatoire parmi le tableau de couleurs données
 	function randomColor(colors) {
 		return colors[Math.floor(Math.random() * colors.length)];
 	}
 
-  // Fonction pour générer des confettis
 	function generateConfetti(e) {
-    // Vérifiez le temps écoulé depuis le dernier spawn
 		const currentTime = Date.now();
 		const timeSinceLastSpawn = currentTime - lastSpawnTime;
-    const cooldown = 30; // Temps de récupération en millisecondes (0.2s)
+		const cooldown = 30;
 
-    if (timeSinceLastSpawn < cooldown) {
-      return; // Ignore le spawn si le cooldown n'est pas écoulé
-  }
+		if (timeSinceLastSpawn < cooldown) {
+			return;
+		}
 
-    lastSpawnTime = currentTime; // Met à jour le dernier temps de spawn
+		lastSpawnTime = currentTime;
 
-    // Créez un élément div pour chaque confetti
-    const confettiCount = getRandomInt(2, 6); // Génère un nombre aléatoire de confettis entre 2 et 6
-    const colors = ['#36A6FF', '#53C0EC', '#FFFFFF']; // Tableau de couleurs disponibles
+		const confettiCount = getRandomInt(2, 6);
+		const colors = ['#36A6FF', '#53C0EC', '#FFFFFF'];
 
-    for (let i = 0; i < confettiCount; i++) {
-    	const confetti = $('<div class="confetti"></div>');
+		for (let i = 0; i < confettiCount; i++) {
+			const confetti = $('<div class="confetti"></div>');
 
-      // Calculez les coordonnées du clic en tenant compte de la position de défilement
-    	const clickX = e.clientX + $(window).scrollLeft();
-    	const clickY = e.clientY + $(window).scrollTop();
+			const clickX = e.clientX + $(window).scrollLeft();
+			const clickY = e.clientY + $(window).scrollTop();
 
-      // Positionnez le confetti à l'emplacement du clic
-    	confetti.css({
-    		left: clickX + 'px',
-    		top: clickY + 'px',
-    		backgroundColor: randomColor(colors)
-    	});
+			confetti.css({
+				left: clickX + 'px',
+				top: clickY + 'px',
+				backgroundColor: randomColor(colors)
+			});
 
-      // Ajoutez le confetti à la page
-    	$('body').append(confetti);
+			$('body').append(confetti);
 
-      // Génère des valeurs aléatoires pour la vitesse et la direction du confetti
-      const speed = getRandomInt(50, 100); // Vitesse aléatoire entre 50 et 100
-      const angle = getRandomInt(0, 360); // Direction aléatoire entre 0 et 360 (en degrés)
+			const speed = getRandomInt(50, 100);
+			const angle = getRandomInt(0, 360);
 
-      // Convertit l'angle en radian
-      const radians = angle * (Math.PI / 180);
+			const radians = angle * (Math.PI / 180);
 
-      // Calcule les valeurs x et y pour le déplacement
-      const vx = Math.cos(radians) * speed;
-      const vy = Math.sin(radians) * speed;
+			const vx = Math.cos(radians) * speed;
+			const vy = Math.sin(radians) * speed;
 
-      // Animer le confetti en utilisant la vitesse et la direction
-      confetti.animate(
-      {
-          top: `+=${vy}px`, // Animation de déplacement vertical vers le curseur
-          left: `+=${vx}px`, // Animation de déplacement horizontal vers le curseur
-          opacity: 0 // Animation de disparition
-      },
-        1000, // Durée de l'animation (en millisecondes)
-        function() {
-          // Supprimez le confetti une fois l'animation terminée
-        	confetti.remove();
-        }
-        );
-  }
-}
+			confetti.animate(
+			{
+				top: `+=${vy}px`,
+				left: `+=${vx}px`,
+				opacity: 0
+			},
+			1000,
+			function() {
+				confetti.remove();
+			}
+			);
+		}
+	}
 
-  /*Ajoutez des événements de souris à la div cible*/
-divCible.on('mousedown', function(e) {
-	isMouseDown = true;
-	spawnInterval = setInterval(function() {
+	divCible.on('mousedown', function(e) {
+		isMouseDown = true;
+		spawnInterval = setInterval(function() {
+			if (isMouseDown) {
+				generateConfetti(e);
+			}
+		}, 100);
+	});
+
+	divCible.on('mouseup', function() {
+		isMouseDown = false;
+		clearInterval(spawnInterval);
+	});
+
+	divCible.on('mouseleave', function() {
+		isMouseDown = false;
+		clearInterval(spawnInterval);
+	});
+
+	divCible.on('mousemove', function(e) {
 		if (isMouseDown) {
 			generateConfetti(e);
 		}
-		    }, 100); // Intervalle de spawn
-});
+	});
 
-divCible.on('mouseup', function() {
-	isMouseDown = false;
-	clearInterval(spawnInterval);
-});
-
-divCible.on('mouseleave', function() {
-	isMouseDown = false;
-	clearInterval(spawnInterval);
-});
-
-divCible.on('mousemove', function(e) {
-	if (isMouseDown) {
-		generateConfetti(e);
-	}
-});
+	$('.email').click(function() {
+		event.preventDefault();
+		window.location.href = 'mailto:' + atob('YW50b2luZWRpb24wNjA2QGdtYWlsLmNvbQ==');
+	});
 });
 
 /*{
