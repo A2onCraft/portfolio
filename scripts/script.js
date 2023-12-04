@@ -1,117 +1,4 @@
-if(window.innerWidth > 720){
-	$('.js-tilt-scale').tilt({
-		scale: 1.1
-	});
-}
-
-if(window.innerWidth > 720){
-	$('.js-tilt').tilt();
-}
-
-$(document).ready(function() {
-	const divCible = $('#confetti');
-
-	let isMouseDown = false;
-	let lastSpawnTime = 0;
-	let spawnInterval;
-
-	function getRandomInt(min, max) {
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-
-	function randomColor(colors) {
-		return colors[Math.floor(Math.random() * colors.length)];
-	}
-
-	function generateConfetti(e) {
-		const currentTime = Date.now();
-		const timeSinceLastSpawn = currentTime - lastSpawnTime;
-		const cooldown = 30;
-
-		if (timeSinceLastSpawn < cooldown) {
-			return;
-		}
-
-		lastSpawnTime = currentTime;
-
-		const confettiCount = getRandomInt(2, 6);
-		const colors = ['#36A6FF', '#53C0EC', '#FFFFFF'];
-
-		for (let i = 0; i < confettiCount; i++) {
-			const confetti = $('<div class="confetti"></div>');
-
-			const clickX = e.clientX + $(window).scrollLeft();
-			const clickY = e.clientY + $(window).scrollTop();
-
-			confetti.css({
-				left: clickX + 'px',
-				top: clickY + 'px',
-				backgroundColor: randomColor(colors)
-			});
-
-			$('body').append(confetti);
-
-			const speed = getRandomInt(50, 100);
-			const angle = getRandomInt(0, 360);
-
-			const radians = angle * (Math.PI / 180);
-
-			const vx = Math.cos(radians) * speed;
-			const vy = Math.sin(radians) * speed;
-
-			confetti.animate(
-			{
-				top: `+=${vy}px`,
-				left: `+=${vx}px`,
-				opacity: 0
-			},
-			1000,
-			function() {
-				confetti.remove();
-			}
-			);
-		}
-	}
-
-	divCible.on('mousedown', function(e) {
-		isMouseDown = true;
-		spawnInterval = setInterval(function() {
-			if (isMouseDown) {
-				generateConfetti(e);
-			}
-		}, 100);
-	});
-
-	divCible.on('mouseup', function() {
-		isMouseDown = false;
-		clearInterval(spawnInterval);
-	});
-
-	divCible.on('mouseleave', function() {
-		isMouseDown = false;
-		clearInterval(spawnInterval);
-	});
-
-	divCible.on('mousemove', function(e) {
-		if (isMouseDown) {
-			generateConfetti(e);
-		}
-	});
-
-	$('.email').click(function() {
-		event.preventDefault();
-		window.location.href = 'mailto:' + atob('YW50b2luZWRpb24wNjA2QGdtYWlsLmNvbQ==');
-	});
-});
-
-/*{
-	title: "Tati",
-	tags: ["Refonte"],
-	date: "2022-03-01",
-	description: "Tati, une icône du bazar bon marché était le sujet notre rebranding pour relancer et moderniser l’image de marque",
-	link: "tati.html",
-	etat: "actif"
-},*/
+const currentURL = window.location.pathname;
 
 const projects = [
 {
@@ -236,6 +123,205 @@ const projects = [
 }
 ];
 
+
+generateMetadata();
+
+function generateMetadata(){
+	let pageTitle = "Antoine DION | UX/UI Designer & Développeur Web";
+	const pageDescription = "Passionné par la création d'expériences utilisateur exceptionnelles. Je suis ravi de partager avec vous mon portfolio présentant mes projets récents et mes compétences en conception d'interfaces utilisateur.";
+	const ogUrl = "https://antoinedion.me/";
+	const ogImage = "../assets/profil-picture-1.png";
+	const faviconPath = "../assets/favicon.ico";
+
+	const currentPageFileName = currentURL.split('/').pop();
+
+	const currentProject = projects.find(project => project.link === currentPageFileName);
+
+	switch(URL(currentURL)){
+	case 'index':
+		pageTitle = "Antoine DION | UX/UI Designer & Développeur Web";
+		break;
+	case 'pages':
+		pageTitle = "Projets | Antoine DION | UX/UI Designer & Développeur Web";
+		break;
+	case 'pages/':
+		pageTitle =  currentProject.title + " | Antoine DION | UX/UI Designer & Développeur Web";
+		break;
+	default:
+		pageTitle = "Antoine DION | UX/UI Designer & Développeur Web";
+		break;
+	}
+
+	const head = document.head;
+
+	const titleTag = document.createElement("title");
+	titleTag.innerText = pageTitle;
+	head.appendChild(titleTag);
+
+	const standardMetaTags = [
+		{ name: "title", content: pageTitle },
+		{ name: "description", content: pageDescription }
+		];
+
+	standardMetaTags.forEach((meta) => {
+		const tag = document.createElement("meta");
+		tag.setAttribute("name", meta.name);
+		tag.setAttribute("content", meta.content);
+		head.appendChild(tag);
+	});
+
+	const faviconLink = document.createElement('link');
+	faviconLink.rel = 'icon';
+	faviconLink.href = faviconPath;
+	
+	document.head.appendChild(faviconLink);
+
+	const ogMetaTags = [
+		{ property: "og:type", content: "website" },
+		{ property: "og:url", content: ogUrl },
+		{ property: "og:title", content: pageTitle },
+		{ property: "og:description", content: pageDescription },
+		{ property: "og:image", content: ogImage },
+		];
+
+	ogMetaTags.forEach((meta) => {
+		const tag = document.createElement("meta");
+		tag.setAttribute("property", meta.property);
+		tag.setAttribute("content", meta.content);
+		head.appendChild(tag);
+	});
+
+	const twitterMetaTags = [
+		{ property: "twitter:card", content: "summary_large_image" },
+		{ property: "twitter:url", content: ogUrl },
+		{ property: "twitter:title", content: pageTitle },
+		{ property: "twitter:description", content: pageDescription },
+		{ property: "twitter:image", content: ogImage },
+		];
+
+	twitterMetaTags.forEach((meta) => {
+		const tag = document.createElement("meta");
+		tag.setAttribute("property", meta.property);
+		tag.setAttribute("content", meta.content);
+		head.appendChild(tag);
+	});
+}
+
+if(window.innerWidth > 720){
+	$('.js-tilt-scale').tilt({
+		scale: 1.1
+	});
+}
+
+if(window.innerWidth > 720){
+	$('.js-tilt').tilt();
+}
+
+$(document).ready(function() {
+	const divCible = $('#confetti');
+
+	let isMouseDown = false;
+	let lastSpawnTime = 0;
+	let spawnInterval;
+
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	function randomColor(colors) {
+		return colors[Math.floor(Math.random() * colors.length)];
+	}
+
+	function generateConfetti(e) {
+		const currentTime = Date.now();
+		const timeSinceLastSpawn = currentTime - lastSpawnTime;
+		const cooldown = 30;
+
+		if (timeSinceLastSpawn < cooldown) {
+			return;
+		}
+
+		lastSpawnTime = currentTime;
+
+		const confettiCount = getRandomInt(2, 6);
+		const colors = ['#36A6FF', '#53C0EC', '#FFFFFF'];
+
+		for (let i = 0; i < confettiCount; i++) {
+			const confetti = $('<div class="confetti"></div>');
+
+			const clickX = e.clientX + $(window).scrollLeft();
+			const clickY = e.clientY + $(window).scrollTop();
+
+			confetti.css({
+				left: clickX + 'px',
+				top: clickY + 'px',
+				backgroundColor: randomColor(colors)
+			});
+
+			$('body').append(confetti);
+
+			const speed = getRandomInt(50, 100);
+			const angle = getRandomInt(0, 360);
+
+			const radians = angle * (Math.PI / 180);
+
+			const vx = Math.cos(radians) * speed;
+			const vy = Math.sin(radians) * speed;
+
+			confetti.animate(
+			{
+				top: `+=${vy}px`,
+				left: `+=${vx}px`,
+				opacity: 0
+			},
+			1000,
+			function() {
+				confetti.remove();
+			}
+			);
+		}
+	}
+
+	divCible.on('mousedown', function(e) {
+		isMouseDown = true;
+		spawnInterval = setInterval(function() {
+			if (isMouseDown) {
+				generateConfetti(e);
+			}
+		}, 100);
+	});
+
+	divCible.on('mouseup', function() {
+		isMouseDown = false;
+		clearInterval(spawnInterval);
+	});
+
+	divCible.on('mouseleave', function() {
+		isMouseDown = false;
+		clearInterval(spawnInterval);
+	});
+
+	divCible.on('mousemove', function(e) {
+		if (isMouseDown) {
+			generateConfetti(e);
+		}
+	});
+
+	$('.email').click(function() {
+		event.preventDefault();
+		window.location.href = 'mailto:' + atob('YW50b2luZWRpb24wNjA2QGdtYWlsLmNvbQ==');
+	});
+});
+
+/*{
+	title: "Tati",
+	tags: ["Refonte"],
+	date: "2022-03-01",
+	description: "Tati, une icône du bazar bon marché était le sujet notre rebranding pour relancer et moderniser l’image de marque",
+	link: "tati.html",
+	etat: "actif"
+},*/
+
 function filterProjectsByTagAndDate(projects, tag) {
 	let filteredProjects;
 
@@ -346,8 +432,6 @@ function URL(url) {
 }
 
 $(document).ready(function() {
-	const currentURL = window.location.href;
-
 	let currentYear = new Date().getFullYear();
 	$("#copyright span").text("Antoine DION");
 	$("#copyright").append(" © " + currentYear);
@@ -469,5 +553,27 @@ $(document).ready(function() {
 				}
 			}
 		});
+	}
+
+	if (URL(currentURL) == 'pages/') {
+		const fancyboxScript = document.createElement('script');
+		fancyboxScript.src = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js';
+
+		fancyboxScript.onload = function () {
+			Fancybox.bind();
+
+			const imagesInMain = document.querySelectorAll('.main img:not(.header-img img):not(.retour img)');
+
+			imagesInMain.forEach(image => {
+				image.setAttribute('data-fancybox', 'gallery');
+			});
+		};
+
+		const fancyboxCssLink = document.createElement('link');
+		fancyboxCssLink.rel = 'stylesheet';
+		fancyboxCssLink.href = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css';
+
+		document.head.appendChild(fancyboxCssLink);
+		document.head.appendChild(fancyboxScript);
 	}
 });
