@@ -128,9 +128,9 @@ generateMetadata();
 
 function generateMetadata(){
 	let pageTitle = "Antoine DION | UX/UI Designer & Développeur Web";
-	const pageDescription = "Passionné par la création d'expériences utilisateur exceptionnelles. Je suis ravi de partager avec vous mon portfolio présentant mes projets récents et mes compétences en conception d'interfaces utilisateur.";
+	let pageDescription = "Passionné par la création d'expériences utilisateur exceptionnelles. Je suis ravi de partager avec vous mon portfolio présentant mes projets récents et mes compétences en conception d'interfaces utilisateur.";
 	const ogUrl = "https://antoinedion.me/";
-	const ogImage = "../assets/profil-picture-1.png";
+	let ogImage = "../assets/profil-picture-1.png";
 	const faviconPath = "../assets/favicon.ico";
 
 	const currentPageFileName = currentURL.split('/').pop();
@@ -146,6 +146,8 @@ function generateMetadata(){
 		break;
 	case 'pages/':
 		pageTitle =  currentProject.title + " | Antoine DION | UX/UI Designer & Développeur Web";
+		pageDescription = currentProject.description + " | Antoine DION | UX/UI Designer & Développeur Web";
+		ogImage = "../assets/" + currentProject.link.split('.')[0] + "-00.png"
 		break;
 	default:
 		pageTitle = "Antoine DION | UX/UI Designer & Développeur Web";
@@ -173,7 +175,7 @@ function generateMetadata(){
 	const faviconLink = document.createElement('link');
 	faviconLink.rel = 'icon';
 	faviconLink.href = faviconPath;
-	
+
 	document.head.appendChild(faviconLink);
 
 	const ogMetaTags = [
