@@ -377,6 +377,10 @@ body {
 .wrapper-projects .card .img-show.dis-le {
   background: url('../assets/dis-le.png');
 }
+.wrapper .card .img-show.restitched,
+.wrapper-projects .card .img-show.restitched {
+  background: url('../assets/restitched.png');
+}
 .wrapper .card:hover .img-show.nomade,
 .wrapper-projects .card:hover .img-show.nomade {
   background-image: url('../assets/nomade-2.png');
@@ -424,6 +428,10 @@ body {
 .wrapper .card:hover .img-show.dis-le,
 .wrapper-projects .card:hover .img-show.dis-le {
   background: url('../assets/dis-le-2.png');
+}
+.wrapper .card:hover .img-show.restitched,
+.wrapper-projects .card:hover .img-show.restitched {
+  background: url('../assets/restitched-2.png');
 }
 .wrapper .card .text,
 .wrapper-projects .card .text {
