@@ -85,7 +85,7 @@ const projects = [
 	title: "Petit Futé",
 	tags: ["Refonte", "UX Design", "UI Design", "Développement Web"],
 	date: "2099-01-10",
-	description: "Étant webmaster à Petit Futé, j'ai eu l'occasion de travailler sur une multitude de projets concernant l'UX, l'UI et le développement web",
+	description: "Étant UX/UI Designer & Développeur Web à Petit Futé, j'ai eu l'occasion de travailler sur une multitude de projets concernant ces points",
 	link: "petitfute.html",
 	etat: "inactif"
 },
