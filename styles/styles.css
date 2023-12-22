@@ -648,8 +648,18 @@ body {
   display: flex;
   margin: 30px auto;
 }
+.main img {
+  cursor: pointer;
+}
+.main .header-img img {
+  cursor: auto;
+}
 .main p {
   margin-bottom: 16px;
+}
+.main p a,
+.main p a:visited {
+  color: #000;
 }
 .main li {
   margin-left: 32px;
