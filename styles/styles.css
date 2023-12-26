@@ -567,7 +567,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 16px;
   transition: all 0.3s ease;
   /*&:hover{
@@ -819,6 +819,7 @@ footer #copyright span {
   }
   .main-content .footer-contact .text .links {
     justify-content: center;
+    flex-wrap: wrap;
   }
   .a-propos {
     padding-bottom: 64px;
