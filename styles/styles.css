@@ -381,6 +381,10 @@ body {
 .wrapper-projects .card .img-show.restitched {
   background: url('../assets/restitched.png');
 }
+.wrapper .card .img-show.sauveurs-de-saveurs,
+.wrapper-projects .card .img-show.sauveurs-de-saveurs {
+  background: url('../assets/sauveurs-de-saveurs.png');
+}
 .wrapper .card:hover .img-show.nomade,
 .wrapper-projects .card:hover .img-show.nomade {
   background-image: url('../assets/nomade-2.png');
@@ -432,6 +436,10 @@ body {
 .wrapper .card:hover .img-show.restitched,
 .wrapper-projects .card:hover .img-show.restitched {
   background: url('../assets/restitched-2.png');
+}
+.wrapper .card:hover .img-show.sauveurs-de-saveurs,
+.wrapper-projects .card:hover .img-show.sauveurs-de-saveurs {
+  background: url('../assets/sauveurs-de-saveurs-2.png');
 }
 .wrapper .card .text,
 .wrapper-projects .card .text {
@@ -638,6 +646,10 @@ body {
 }
 .main h2 {
   font-size: 24px;
+}
+.main a,
+.main a.visited {
+  color: #52A2EC;
 }
 .main img.responsive {
   width: 100%;
