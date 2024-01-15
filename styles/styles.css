@@ -575,7 +575,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 16px;
   transition: all 0.3s ease;
   /*&:hover{
@@ -660,8 +660,18 @@ body {
   display: flex;
   margin: 30px auto;
 }
+.main img {
+  cursor: pointer;
+}
+.main .header-img img {
+  cursor: auto;
+}
 .main p {
   margin-bottom: 16px;
+}
+.main p a,
+.main p a:visited {
+  color: #000;
 }
 .main li {
   margin-left: 32px;
@@ -821,6 +831,7 @@ footer #copyright span {
   }
   .main-content .footer-contact .text .links {
     justify-content: center;
+    flex-wrap: wrap;
   }
   .a-propos {
     padding-bottom: 64px;
