@@ -115,7 +115,7 @@ const projects = [
 },
 {
 	title: "Restitched",
-	tags: ["Refonte", "UX Design", "UI Design"],
+	tags: ["Refonte", "UI Design"],
 	date: "2023-12-04",
 	description: "Restitched est un jeu créé par Trixel Creative. Ce projet non officiel à pour but la refonte de sa landing page en design émotionnel",
 	link: "restitched.html",
