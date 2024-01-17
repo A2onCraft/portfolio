@@ -134,7 +134,7 @@ const projects = [
 
 if(window.innerWidth > 720){
 	$('.js-tilt-scale').tilt({
-		scale: 1.1
+		scale: 1.1,
 	});
 }
 
@@ -461,8 +461,6 @@ $(document).ready(function() {
 
 	if (URL(currentURL) == 'pages/') {
 		$(".owl-carousel").owlCarousel({
-			loop: true,
-			center: true,
 			margin: 16,
 			lazyLoad: true,
 			dots: true,
