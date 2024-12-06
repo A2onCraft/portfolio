@@ -40,11 +40,11 @@
 	<link rel="stylesheet" type="text/css" href="../styles/styles.css" />
 </head>
 
-<body>
+<body class="bg-pattern">
 	<header>
 		<div class="logo">
 			<a href="../index.html">
-				<img src="../assets/logo.png" />
+				<img src="../assets/logo-new.png" width="72" height="72" />
 				<span class="hide">Antoine DION</span>
 			</a>
 		</div>
@@ -67,17 +67,26 @@
 	</div>
 
 	<div class="header-img m-t-1">
-		<img src="../assets/closeme-00.png" />
+		<img src="../assets/closeme/header.png" alt="header" />
 	</div>
 
 	<div class="main project">
 		<div class="aside">
-			<div class="content">
+			<div class="content shadow">
 				<h3>Contenu</h3>
+				<a class="scroll" href="#personas">Personas</a>
 				<a class="scroll" href="#wireframes-et-prototypes">Wireframes et prototypes</a>
+				<a class="scroll" href="#quel-est-le-challenge">Quel est le challenge ?</a>
 			</div>
 		</div>
-		<div>
+		<div class="article shadow">
+			<div class="retour m-b-1">
+				<a href="projets.html">
+					<img src="../assets/Retour.png">
+					<span>Retour aux projets</span>
+				</a>
+			</div>
+
 			<div class="title">
 				<h1>CloseMe</h1>
 				<span class="pastille ux-design">UX Design</span>
@@ -87,7 +96,7 @@
 			<div class="m-t-1">
 				<div class="m-b-1 flex gap-2 flex-center">
 					<div class="people-group">
-						<img class="no-fancybox shadow" src="../assets/closeme-people-1.png" width="32"
+						<img class="no-fancybox shadow" src="../assets/closeme/closeme-people-1.png" width="32"
 							height="32" />
 						<img class="no-fancybox shadow" src="../assets/profil-picture-1.png" width="32" height="32" />
 					</div>
@@ -123,37 +132,48 @@
 
 			<div class="overview m-t-1">
 				<h2>Vue d'ensemble</h2>
-				<p class="m-b-0">Lorem ipsum dolor sit amet consectetur. <b>Eget congue ligula</b> facilisis mattis
-					id
-					phasellus id non. Lacus felis donec elementum varius et aliquet in risus.<br />
-					Rhoncus quisque congue <b>cursus a gravida</b> ornare et viverra. Leo eget tincidunt quam vitae
-					fames in gravida cras. Ipsum faucibus volutpat pretium ultrices senectus euismod sed
-					vivamus.<br />
-					Pawsome est une application de réseau social spécialisé sur les animaux. Son processus de
-					création
-					était le design sprint</p>
+				<p class="m-b-0">CloseMe est un concept d'application de rencontre basée sur la proximité. Elle remplace
+					le système de match par une messagerie instantanée sécurisée.
 			</div>
 
-			<p class="m-t-1">CloseMe est un concept d’application de rencontre qui se base sur la proximité</p>
+			<h2 class="m-t-2" id="personas">Personas</h2>
+			<p class="m-t-1">
+				Je suis Antoine Dion, un Product Designer à l'écoute de vos projets. Ma spécialité est l'accessibilité
+				et la création d'interfaces et d'expériences en prenant en compte les contraintes de budgets et de la
+				faisabilité des projets. Diplômé d'un master en UX Design à #SUPDEWEB et je conçois actuellement au <a
+					href="https://petitfute.com/" target="_blank">Petit Futé</a>.
+			</p>
+			<div class="m-t-2 flex-disposition">
+				<img src="../assets/closeme/persona-01.png" />
+				<img src="../assets/closeme/persona-02.png" />
+				<img src="../assets/closeme/persona-03.png" />
+			</div>
 
 			<h2 class="m-t-2" id="wireframes-et-prototypes">Wireframes et prototypes</h2>
 
 			<div class="m-t-2 flex-disposition">
-				<img src="../assets/closeme-01.png" />
-				<img src="../assets/closeme-02.png" />
-				<img src="../assets/closeme-03.png" />
-				<img src="../assets/closeme-04.png" />
-				<img src="../assets/closeme-05.png" />
-				<img src="../assets/closeme-06.png" />
-				<img src="../assets/closeme-07.png" />
-				<img src="../assets/closeme-08.png" />
-				<img src="../assets/closeme-09.png" />
-				<img src="../assets/closeme-10.png" />
-				<img src="../assets/closeme-11.png" />
-				<img src="../assets/closeme-12.png" />
-				<img src="../assets/closeme-13.png" />
-				<img src="../assets/closeme-14.png" />
+				<img src="../assets/closeme/closeme-01.png" />
+				<img src="../assets/closeme/closeme-02.png" />
+				<img src="../assets/closeme/closeme-03.png" />
+				<img src="../assets/closeme/closeme-04.png" />
+				<img src="../assets/closeme/closeme-05.png" />
+				<img src="../assets/closeme/closeme-06.png" />
+				<img src="../assets/closeme/closeme-07.png" />
+				<img src="../assets/closeme/closeme-08.png" />
+				<img src="../assets/closeme/closeme-09.png" />
+				<img src="../assets/closeme/closeme-10.png" />
+				<img src="../assets/closeme/closeme-11.png" />
+				<img src="../assets/closeme/closeme-12.png" />
+				<img src="../assets/closeme/closeme-13.png" />
+				<img src="../assets/closeme/closeme-14.png" />
 			</div>
+
+			<h2 class="m-t-2" id="quel-est-le-challenge">Quel est le challenge ?</h2>
+			<p class="m-t-1">Suite à une ancienne recherche utilisateur, les utilisateurs ont partagés leurs
+				frustrations d’être limité à échanger avec les 60 personnes les plus proches d’eux. L’équipe CloseMe a
+				donc intégré une
+				nouvelle fonctionnalité “Explore” pour discuter avec les autres utilisateurs sans cette restriction de
+				localisation.</p>
 
 			<div class="retour m-t-2">
 				<a href="projets.html">
