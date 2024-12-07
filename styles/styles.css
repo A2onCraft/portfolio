@@ -423,7 +423,7 @@ body {
 }
 .wrapper .card .img-show.dis-le,
 .wrapper-projects .card .img-show.dis-le {
-  background: url('../assets/dis-le.png');
+  background: url('../assets/dis-le/dis-le.png');
 }
 .wrapper .card .img-show.restitched,
 .wrapper-projects .card .img-show.restitched {
@@ -664,12 +664,10 @@ body.bg-pattern:before {
 }
 @keyframes moveBackgroundBody {
   0% {
-    background-position: 0% 0%;
-    /* Point de départ */
+    background-position: 0px 0px;
   }
   100% {
-    background-position: 100% -50%;
-    /* Vers la droite (10%) et légèrement vers le bas (5%) */
+    background-position: 500px 250px;
   }
 }
 .a-propos {
@@ -906,12 +904,10 @@ b {
 }
 @keyframes moveBackground {
   0% {
-    background-position: 0% 0%;
-    /* Point de départ */
+    background-position: 0px 0px;
   }
   100% {
-    background-position: 100% 50%;
-    /* Vers la droite (10%) et légèrement vers le bas (5%) */
+    background-position: 500px 250px;
   }
 }
 .main .citation {
@@ -938,7 +934,7 @@ b {
 .main .people-group {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 .main .people-group img {
@@ -1141,6 +1137,12 @@ h1 .gradiant {
     gap: 64px;
     padding-top: 100px;
     margin-bottom: 64px;
+  }
+  .main .people-group {
+    flex-wrap: wrap;
+  }
+  .main .people-group img:first-child {
+    margin-left: -12px;
   }
   .wrapper-projects .card {
     width: 100%;
