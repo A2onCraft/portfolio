@@ -387,7 +387,7 @@ body {
 }
 .wrapper .card .img-show.pawsome,
 .wrapper-projects .card .img-show.pawsome {
-  background: url('../assets/pawsome.png');
+  background: url('../assets/pawsome/pawsome.png');
 }
 .wrapper .card .img-show.france-coquine,
 .wrapper-projects .card .img-show.france-coquine {
@@ -447,7 +447,7 @@ body {
 }
 .wrapper .card:hover .img-show.pawsome,
 .wrapper-projects .card:hover .img-show.pawsome {
-  background-image: url('../assets/pawsome-2.png');
+  background-image: url('../assets/pawsome/pawsome-2.png');
 }
 .wrapper .card:hover .img-show.netflix,
 .wrapper-projects .card:hover .img-show.netflix {
