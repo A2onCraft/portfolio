@@ -50,14 +50,6 @@ const projects = [
 		etat: "actif"
 	},
 	{
-		title: "PicWicToys",
-		tags: ["Refonte", "UX Design"],
-		date: "2022-06-15",
-		description: "Un projet phygital alliant gamification pour les enfants et la facilité d'accès pour les parents lors des courses",
-		link: "picwictoys.html",
-		etat: "inactif"
-	},
-	{
 		title: "BlockchainyourIP",
 		tags: ["Refonte", "UX Design", "UI Design"],
 		date: "2023-04-03",
@@ -72,14 +64,6 @@ const projects = [
 		description: "Étant UX/UI Designer & Développeur Web à Petit Futé, j'ai eu l'occasion de travailler sur une multitude de projets concernant ces points",
 		link: "petitfute.html",
 		etat: "inactif"
-	},
-	{
-		title: "Sliming Away",
-		tags: ["UX Design", "Jeu Vidéo"],
-		date: "2023-07-13",
-		description: "Sliming Away est un jeu foddian game où le but est d'arriver à la sortie le plus vite possible avec comme seul mouvement : le saut",
-		link: "sliming-away.html",
-		etat: "actif"
 	},
 	{
 		title: "Dis-Le",
@@ -107,6 +91,25 @@ const projects = [
 	}
 ];
 
+
+/*
+	{
+		title: "PicWicToys",
+		tags: ["Refonte", "UX Design"],
+		date: "2022-06-15",
+		description: "Un projet phygital alliant gamification pour les enfants et la facilité d'accès pour les parents lors des courses",
+		link: "picwictoys.html",
+		etat: "inactif"
+	},
+	{
+		title: "Sliming Away",
+		tags: ["UX Design", "Jeu Vidéo"],
+		date: "2023-07-13",
+		description: "Sliming Away est un jeu foddian game où le but est d'arriver à la sortie le plus vite possible avec comme seul mouvement : le saut",
+		link: "sliming-away.html",
+		etat: "inactif"
+	},
+*/
 
 if (window.innerWidth > 720) {
 	$('.js-tilt-scale').tilt({
@@ -305,29 +308,29 @@ $(document).ready(function () {
 
 				if (key == 'filter') {
 					switch (value) {
-						case "UX_Design":
-							selectedTag = 'UX Design';
-							break;
+					case "UX_Design":
+						selectedTag = 'UX Design';
+						break;
 
-						case "UI_Design":
-							selectedTag = 'UI Design';
-							break;
+					case "UI_Design":
+						selectedTag = 'UI Design';
+						break;
 
-						case "Refonte":
-							selectedTag = 'Refonte';
-							break;
+					case "Refonte":
+						selectedTag = 'Refonte';
+						break;
 
-						case "Developpement_web":
-							selectedTag = 'Développement Web';
-							break;
+					case "Developpement_web":
+						selectedTag = 'Développement Web';
+						break;
 
-						case "Jeu_video":
-							selectedTag = 'Jeu Vidéo';
-							break;
+					case "Jeu_video":
+						selectedTag = 'Jeu Vidéo';
+						break;
 
 
-						default:
-							break;
+					default:
+						break;
 					}
 				}
 			});
